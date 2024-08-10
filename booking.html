@@ -93,189 +93,115 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- Car Detail Start -->
-    <div class="container-fluid pt-5">
-        <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-5">LANDCRUISER PRADO</h1>
-            <div class="row align-items-center pb-2">
-                <div class="col-lg-6 mb-4">
-                    <img class="img-fluid" src="img/TOYATA LAN CRUISER PRADO.jpg" alt="LANDCRUISER PRADO">
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">1400GH/1600GH/Day</h4>
-                    <div class="d-flex mb-3">
-                        <h6 class="mr-2">Rating:</h6>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(250)</small>
-                        </div>
-                    </div>
-                    <p>The Landcruiser Prado is a perfect blend of luxury and rugged capability, designed for both urban commutes and off-road adventures. With a powerful engine, advanced safety features, and state-of-the-art technology, it ensures a smooth and secure ride. Whether you're navigating city streets or exploring uncharted terrains, the Prado offers unparalleled comfort, reliability, and performance. Experience the elegance of its interiors, the precision of its handling, and the confidence that comes with driving a vehicle built to handle anything the road throws at it.</p>
-
-                    <div class="d-flex pt-1">
-                        <h6>Share on:</h6>
-                        <div class="d-inline-flex">
-                            <a class="px-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="px-2" href="#"><i class="fab fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-n3 mt-lg-0 pb-4">
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2019</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Automatic</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
-                    <span>20km/liter</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
-                    <span>GPS Navigation</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Car Detail End -->
-
-    <!-- Car Booking Start -->
     <div class="container-fluid pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <h2 class="mb-4">Personal Details</h2>
-                    <div class="mb-5">
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="First Name" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Last Name" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="email" class="form-control p-4" placeholder="Your Email" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Mobile Number" required="required">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Address Line 1" required="required">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Address Line 2">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="City" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="State" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pick-up Date" data-target="#date1" data-toggle="datetimepicker" />
+                    <form id="bookingForm">
+                        <div class="mb-5">
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="First Name" name="firstName" required>
                                 </div>
-                            </div>
-                            <div class="col-6 form-group">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker" />
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Last Name" name="lastName" required>
                                 </div>
+                                <div class="col-6 form-group">
+                                    <input type="email" class="form-control p-4" placeholder="Your Email" name="email" required>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Mobile Number" name="mobile" required>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Pick-up Location" name="address1" required>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Drop-Off Location" name="address2">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="City" name="city" required>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Ghana Card No." name="card" required>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pick-up Date" name="pickupDate" data-target="#date1" data-toggle="datetimepicker" required />
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <div class="date" id="date2" data-target-input="nearest">
+                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" name="returnDate" data-target="#date2" data-toggle="datetimepicker" required />
+                                    </div>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <label for="Select-car">Select Car</label>
+                                    
+                                    <select class="form-control p-4" name="carSelectionDropdown" id="carSelectionDropdown" required onchange="updateCarSelection()">
+                                        
+                                        <option value="" selected>Select Car</option>
+                                        <option value="Landcruiser Prado">Landcruiser Prado</option>
+                                        <option value="Toyota Corolla">Toyota Corolla</option>
+                                        <option value="Nissan Altima">Nissan Altima</option>
+                                        <option value="Honda Accord">Honda Accord</option>
+                                        <option value="Mercedes Benz C250">Mercedes Benz C250</option>
+                                        <option value="Mercedes Benz R3">Mercedes Benz R3</option>
+                                        <option value="TOYOTA HILLUX">TOYOTA HILLUX</option>
+                                        <option value="TOYOTA HIGHLANDER">TOYOTA HIGHLANDER</option>
+                                        <option value="TOYOTA CAMERY">TOYOTA CAMERY</option>
+                                        <input type="text" class="form-control p-4 mt-3" placeholder="Selected Car" name="carSelection" id="carSelection" readonly required>
+                                    </select>
+                                   
+                                </div>
+                                <h2 class="mb-4">Payment</h2>
+                                <select class="form-control p-4" name="paymentMethodDropdown" id="paymentMethodDropdown" required onchange="updatePaymentMethod()">
+                                    <option value="" selected>Select Payment Method</option>
+                                    <option value="cash">Cash Payment</option>
+                                    <option value="check">Check Payment</option>
+                                    <option value="bank_transfer">Bank Transfer</option>
+                                </select>
+                                <input type="text" class="form-control p-4 mt-3" placeholder="Selected Payment Method" name="paymentMethod" id="paymentMethod" readonly required>
                             </div>
                         </div>
-                    </div>
-                    <h2 class="mb-4">Payment</h2>
-                    <div class="row">
-                        <div class="col-12 form-group">
-                            <input type="text" class="form-control p-4" placeholder="Card Number" required="required">
-                        </div>
-                        <div class="col-12 form-group">
-                            <input type="text" class="form-control p-4" placeholder="Card Name" required="required">
-                        </div>
-                        <div class="col-6 form-group">
-                            <input type="text" class="form-control p-4" placeholder="Expiration" required="required">
-                        </div>
-                        <div class="col-6 form-group">
-                            <input type="text" class="form-control p-4" placeholder="CVV" required="required">
-                        </div>
-                    </div>
+                        <button type="button" class="btn btn-block btn-primary font-weight-bold py-3 mt-4" onclick="submitBookingForm()">Confirm Booking</button>
+                    </form>
                 </div>
-                <div class="col-lg-4">
-                    <h2 class="mb-3">Booking Summary</h2>
-                    <div class="bg-secondary p-4 mb-4">
-                        <h5 class="text-white">LANDCRUISER PRADO</h5>
-                        <p class="text-white">GH 1400 / Day</p>
-                        <p class="text-white">Start Date: 2024-08-10</p>
-                        <p class="text-white">End Date: 2024-08-14</p>
-                        <h6 class="text-white">Total: GH 5600</h6>
-                    </div>
-                    <button class="btn btn-block btn-primary font-weight-bold py-3">Confirm Booking</button>
-                </div>
+              
             </div>
         </div>
     </div>
-    <!-- Car Booking End -->
-<!-- Footer Start -->
-<div class="container-fluid bg-secondary text-light py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
-    <div class="row pt-5">
-        <!-- Contact Information -->
-        <div class="col-lg-4 col-md-6 mb-5">
-            <h4 class="text-uppercase mb-4">Get In Touch</h4>
-            <p><i class="fa fa-map-marker-alt text-white mr-2"></i>123 Street, AMASAMAN</p>
-            <p><i class="fa fa-phone-alt text-white mr-2"></i>+233 542410510</p>
-            <p><i class="fa fa-envelope text-white mr-2"></i>nakaatamotors@gmail.com</p>
-            <div class="d-flex mt-3">
-                <a class="btn btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+    <script>
+        async function submitBookingForm() {
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
 
-        <!-- Newsletter -->
-        <div class="col-lg-4 col-md-6 mb-5">
-            <h4 class="text-uppercase mb-4">Newsletter</h4>
-            <p class="mb-4">Stay updated with our latest offers and news. Subscribe to our newsletter.</p>
-            <div class="input-group">
-                <input type="email" class="form-control bg-dark border-dark text-light" placeholder="Your Email" aria-label="Email">
-                <div class="input-group-append">
-                    <button class="btn btn-primary text-uppercase px-4">Sign Up</button>
-                </div>
-            </div>
-        </div>
+            // Convert FormData to JSON object
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
 
-        <!-- About Us -->
-        <div class="col-lg-4 col-md-12 mb-5">
-            <h4 class="text-uppercase mb-4">About Nakaata Motors</h4>
-            <p>We specialize in buying, selling, and renting all types of cars. Your satisfaction is our priority.</p>
-            <p class="mb-0">Follow us on social media for the latest updates and offers.</p>
-        </div>
-    </div>
-</div>
-<div class="container-fluid bg-dark text-light py-3 px-sm-3 px-md-5">
-    <div class="row">
-        <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-            <p class="mb-0">&copy; <a class="text-light font-weight-bold" href="#">NAKAATA MOTORS</a>. All Rights Reserved.</p>
-        </div>
-        <div class="col-md-6 text-center text-md-right">
-            <p class="mb-0">Designed by <a class="text-light font-weight-bold" href="https://www.linkedin.com/in/isaac-obeng-obeng/" target="_blank">Isaac Obeng</a></p>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+            try {
+                const response = await fetch('http://localhost:3000/bookings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Booking successful: ' + result.message);
+                } else {
+                    alert('Booking failed: ' + response.statusText);
+                }
+            } catch (error) {
+                alert('Error submitting the form: ' + error.message);
+            }
+        }
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -286,6 +212,22 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+    <script>
+        function updateCarSelection() {
+            const carDropdown = document.getElementById('carSelectionDropdown');
+            const selectedCar = carDropdown.options[carDropdown.selectedIndex].text;
+            document.getElementById('carSelection').value = selectedCar;
+        }
+    
+        function updatePaymentMethod() {
+            const paymentDropdown = document.getElementById('paymentMethodDropdown');
+            const selectedPaymentMethod = paymentDropdown.options[paymentDropdown.selectedIndex].text;
+            document.getElementById('paymentMethod').value = selectedPaymentMethod;
+        }
+    </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
