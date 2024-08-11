@@ -3,9 +3,6 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
-
-
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,13 +10,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS for all routes
-// Serve static files (e.g., HTML, CSS, JS)
-// app.use(express.static('public'));
 
-// Route to handle the form submission
+// Route to handle the booking form submission
 app.post('/bookings', (req, res) => {
     console.log('Request received:', req.body);
-    res.json({ message: 'Booking successful!' });
+
     const {
         firstName,
         lastName,
@@ -40,25 +35,12 @@ app.post('/bookings', (req, res) => {
         - Name: ${firstName} ${lastName}
         - Email: ${email}
         - Mobile: ${mobile}
-        -card: ${card}
+        - Card: ${card}
         - Address: ${address1}, ${address2 ? address2 + ',' : ''} ${city}
         - Pick-up Date: ${pickupDate}
         - Return Date: ${returnDate}
         - Car Selected: ${carSelection}
         - Payment Method: ${paymentMethod}
-    `;
-    // Route to handle contact form submission
-app.post('/contact-us', (req, res) => {
-    console.log('Contact form received:', req.body);
-
-    const { name, email, subject, message } = req.body;
-
-    const contactMessage = `
-        Contact Us Message:
-        - Name: ${name}
-        - Email: ${email}
-        - Subject: ${subject}
-        - Message: ${message}
     `;
 
     // Setup Nodemailer transporter
@@ -75,7 +57,7 @@ app.post('/contact-us', (req, res) => {
         from: 'nakaata247@gmail.com',
         to: email,
         subject: 'Your Booking Confirmation - Nakaata Motors',
-        text: `Dear ${firstName},\n\nThank you for booking with Nakaata Motors. Here are your booking details:\n${formData}\n\nPlease Remember to Bring along your Ghana Card Used for Verification \n\nBest regards,\nNakaata Motors`
+        text: `Dear ${firstName},\n\nThank you for booking with Nakaata Motors. Here are your booking details:\n${formData}\n\nPlease remember to bring along your Ghana Card used for verification.\n\nBest regards,\nNakaata Motors`
     };
 
     // Email options for admin
@@ -92,10 +74,7 @@ app.post('/contact-us', (req, res) => {
             console.error('Error sending email to client:', error);
             return res.status(500).send('Failed to send confirmation email to client.');
         }
-        console.log('Contact message sent to admin: ' + info.response);
-        res.status(200).send('Contact message sent successfully!');
-    });
-
+        console.log('Email sent to client: ' + info.response);
 
         // Send email to admin after client email is sent
         transporter.sendMail(mailOptionsAdmin, (error, info) => {
@@ -106,6 +85,49 @@ app.post('/contact-us', (req, res) => {
             console.log('Email sent to admin: ' + info.response);
             res.status(200).send('Booking form submitted successfully and emails sent!');
         });
+    });
+});
+
+// Separate route to handle the contact form submission
+app.post('/contact-us', (req, res) => {
+    res.send('Test route working');
+    console.log('Contact form received:', req.body);
+
+    const { name, email, subject, message } = req.body;
+
+    const contactMessage = `
+        Contact Us Message:
+        - Name: ${name}
+        - Email: ${email}
+        - Subject: ${subject}
+        - Message: ${message}
+    `;
+
+    // Reuse the transporter configuration
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'nakaata247@gmail.com',
+            pass: 'dqob vwue hmiq vjbr'
+        }
+    });
+
+    // Email options for admin (contact form)
+    let mailOptionsAdmin = {
+        from: 'nakaata247@gmail.com',
+        to: 'nakaata247@gmail.com', // Replace with the admin's email address
+        subject: `Contact Form Submission: ${subject}`,
+        text: contactMessage
+    };
+
+    // Send email to admin
+    transporter.sendMail(mailOptionsAdmin, (error, info) => {
+        if (error) {
+            console.error('Error sending contact message:', error);
+            return res.status(500).send('Failed to send contact message.');
+        }
+        console.log('Contact message sent to admin: ' + info.response);
+        res.status(200).send('Contact message sent successfully!');
     });
 });
 
