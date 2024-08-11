@@ -47,6 +47,19 @@ app.post('/bookings', (req, res) => {
         - Car Selected: ${carSelection}
         - Payment Method: ${paymentMethod}
     `;
+    // Route to handle contact form submission
+app.post('/contact-us', (req, res) => {
+    console.log('Contact form received:', req.body);
+
+    const { name, email, subject, message } = req.body;
+
+    const contactMessage = `
+        Contact Us Message:
+        - Name: ${name}
+        - Email: ${email}
+        - Subject: ${subject}
+        - Message: ${message}
+    `;
 
     // Setup Nodemailer transporter
     let transporter = nodemailer.createTransport({
@@ -79,7 +92,10 @@ app.post('/bookings', (req, res) => {
             console.error('Error sending email to client:', error);
             return res.status(500).send('Failed to send confirmation email to client.');
         }
-        console.log('Email sent to client: ' + info.response);
+        console.log('Contact message sent to admin: ' + info.response);
+        res.status(200).send('Contact message sent successfully!');
+    });
+
 
         // Send email to admin after client email is sent
         transporter.sendMail(mailOptionsAdmin, (error, info) => {
